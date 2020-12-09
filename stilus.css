@@ -1,0 +1,817 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;1,300&display=swap');
+/* 
+    Szinek
+    #bbc3d4 - világos szürke
+    #373a40 - fekete
+    #19d3da - világos kék
+*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.scrollUpBtn {
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #19d3da;
+    right: 30px;
+    bottom: 10px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 45px;
+    color: #000;
+    font-size: 30px;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+.scrollUpBtn.show {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+p {
+    text-align: justify;
+}
+
+span {
+    color: #19d3da;
+}
+
+.btn {
+    font-size: 2.3rem;
+    padding: 10px 30px;
+    border-radius: 10px;
+    outline: none;
+    background: rgb(26, 25, 25);
+    color: #fff;
+    cursor: pointer;
+    margin-top: 30px;
+    border: 3px hidden;
+
+}
+
+.btn:hover {
+    background: none;
+    border: 3px solid #19d3da;
+    color: #fff;
+}
+
+.btn2 {
+    width: 350px;
+    font-size: 2.3rem;
+    padding: 10px 30px;
+    border-radius: 10px;
+    outline: none;
+    background: linear-gradient( #4f4f4f, rgb(0, 0, 0));
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    box-shadow: 3px 3px 5px #19d3da;
+    transition: box-shadow 1s;
+}
+
+.btn2:hover {
+    box-shadow: -3px -3px 5px #19d3da;
+    background: linear-gradient(rgb(0, 0, 0), #4f4f4f);
+}
+/* sötét alapon lévő felirat */
+.fejlec {
+    padding-top: 50px;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.fejlec span{
+    color: #fff;
+    font-size: 2.5rem;
+    background-color: #bbc3d4;
+    position: relative;
+    top: 30px;
+    padding: 0 15px;
+}
+
+.fejlec .line {
+    position: relative;
+    width: 370px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-bottom: 5px solid black;
+}
+/* világos alapon lévő felirat */
+.fejlecfeher {
+    position: relative;
+    top: 7rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.fejlecfeher span{
+    color: #19d3da;
+    font-size: 2.5rem;
+    background-color: #373a40;
+    position: relative;
+    top: 35px;
+    padding: 0 15px;
+}
+
+.fejlecfeher .linefeher {
+    position: relative;
+    width: 470px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-bottom: 5px solid #fff;
+}
+
+.flexcontainer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10rem 60px;
+    flex-wrap: wrap;
+    background: #373a40;
+}
+
+/* nav Bar */
+
+.navBar {
+    width: 100%;
+    padding-bottom: 10px;
+    background: #373a40;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    border-bottom: 2px solid #fff;
+}
+
+.navBar .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navBar .left {
+    padding-left: 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.navBar.right {
+    text-align: center;
+}
+
+.navBar .left span {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+a {
+    padding: 0 20px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.4s;
+    padding-bottom: 5px;
+}
+
+a:hover {
+    color: #bbc3d4;
+    border-bottom: 2px solid #bbc3d4;
+}
+
+.navBar .hamburger-menu {
+    height: 2.5rem;
+    width: 3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 10px;
+    display: none;
+}
+
+.hamburgerline {
+    width: 3rem;
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    transition: 0.5s;
+    position: relative;
+}
+
+.hamburgerline::before, .hamburgerline::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: #eee;
+    transition: 0.5s;
+}
+
+.hamburgerline::before {
+    transform: translateY(-12px);
+}
+
+.hamburgerline::after {
+    transform: translateY(12px);
+}
+
+.navBar.active .hamburgerline {
+    transform: rotate(360deg);
+    background: transparent;
+}
+
+.navBar.active .hamburgerline::before {
+    transform: translateY(0) rotate(45deg);
+}
+
+.navBar.active .hamburgerline::after {
+    transform: translateY(0) rotate(-45deg);
+}
+
+.navBar .mininavigation {
+    display: none;
+}
+
+.scrollIndicator {
+    position: fixed;
+    top: 96px;
+    left: 0;
+    height: 2px;
+    background: #19d3da;
+}
+
+/* Kezdő kép */
+
+.imgContainer {
+    height: 100vh;
+    position: relative;
+    background-image: url("./img/szinesHaromSzog.png");
+    background-size: cover;
+}
+
+.imgContainer .bigImg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(55, 58, 64, 0.93);
+}
+
+.imgContainer .bigImg .flexContainer {
+    display: flex;
+    height: 100vh;
+    color: #fff;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.imgContainer .bigImg .flexContainer .left h1 {
+    font-size: 7rem;
+    line-height: 110px;
+}
+
+.imgContainer .bigImg .flexContainer .left p {
+    font-size: 2.3rem;
+}
+
+.imgContainer .bigImg .flexContainer .left h2 {
+    font-size: 3rem;
+    font-weight: normal;
+}
+
+.imgContainer .bigImg .flexContainer .right img {
+    width: 100%;
+    min-width: 700px;
+}
+
+/* About page kezdete */
+
+.about {
+    background-color: #bbc3d4;
+}
+
+/* about bal oldal */
+
+/* .about .flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 80%;
+    align-items: center;
+} */
+.about .flexcontainer {
+    background: #bbc3d4;
+}
+
+.about .flexcontainer .kepdoboz {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgb(43, 42, 42);
+}
+
+.about .flexcontainer .kepdoboz img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.7);
+
+}
+/* about jobb oldal */
+.about .flexcontainer .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    min-width: 320px;
+    height: 500px;
+}
+
+.about .flexcontainer .text h2 {
+    font-size: 2.5rem;
+}
+
+.about .flexcontainer .text span {
+    color: #fff;
+    font-size: 2.5rem;
+    background-color: #bbc3d4;
+}
+
+.about .flexcontainer .text p {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+/* Service rész kezdete */
+
+.services {
+    background: #373a40;
+    color: #fff;
+}
+
+.design, .advertising, .appdesign {
+    width: 470px;
+    height: 400px;
+    background: #bbc3d4;
+    margin-top: 50px;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: #000;
+    text-align: center;
+    font-size: 1.2rem;
+    transition: color 0.5s, border 0.3s ease-out, transform 1s;
+}
+
+.design:hover, .advertising:hover, .appdesign:hover {
+    border: 5px solid #19d3da;
+    cursor: pointer;
+}
+
+.design h4, .advertising h4, .appdesign h4 {
+    font-size: 2rem;
+}
+
+.design p, .advertising p, .appdesign p {
+    text-align: center;
+}
+
+.icon {
+    font-size: 7rem;
+    color: #19d3da;
+    -webkit-text-stroke: 0.3px black;
+}
+/* skills kezdete */
+.skills {
+    background: #bbc3d4;
+}
+
+.skills .fejlec .line {
+    width: 470px;
+}
+
+.skills .flexcontainer {
+    background: #bbc3d4;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+.skills .flexcontainer .text, .skills .flexcontainer .csuszka {
+    height: 400px;
+    width: 600px;
+    font-size: 1.5rem;
+}
+
+.skills .flexcontainer .text h4 {
+    padding-bottom: 15px;
+}
+
+.skills .flexcontainer .text .btn2 {
+    margin-top: 20px;
+    font-size: 2rem;
+    width: 250px;
+}
+
+.skills .flexcontainer .csuszka .info span {
+    color: #000;
+}
+.skills .flexcontainer .csuszka .info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills .flexcontainer .csuszka .csik {
+    height: 5px;
+    width: 100%;
+    background-color: #ccc;
+    position: relative;
+}
+
+.skills .flexcontainer .csuszka .csik::before {
+    content: '';
+    height: 5px;
+    background: #17bcc2;
+    position: absolute;
+}
+
+.skills .flexcontainer .csuszka .html::before {
+    width: 90%;
+}
+
+.skills .flexcontainer .csuszka .css::before {
+    width: 60%;
+}
+
+.skills .flexcontainer .csuszka .js::before {
+    width: 80%;
+}
+
+.skills .flexcontainer .csuszka .node::before {
+    width: 50%;
+}
+
+.skills .flexcontainer .csuszka .sql::before {
+    width: 70%;
+}
+/* Contact eleje */
+.contact {
+    background: #373a40;
+    color: #fff;
+}
+
+.contact .fejlecfeher {
+    color: #fff;
+}
+
+.contact .flexcontainer {
+    padding: 10rem 50px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact .flexcontainer .left, .contact .flexcontainer .right {
+    width: 40%;
+    min-width: 400px;
+}
+
+.contact .flexcontainer .left .kisflex {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding-top: 20px;
+}
+
+.contact .flexcontainer .left .kisflex > i {
+    font-size: 2.5rem;
+    padding-right: 30px;
+    color: #17bcc2;
+    
+}
+
+.contact .flexcontainer .left .kisflex .fa-map-marker-alt {
+    padding-right: 40px;
+}
+
+.contact .flexcontainer .left .kisflex .fa-user {
+    padding-right: 36px;
+}
+
+.contact .flexcontainer .right div {
+    margin: 10px 0;
+}
+
+.contact .flexcontainer .right div .input{
+    font-size: 1.2rem;
+    outline: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: none;
+}
+.nev, .email {
+    width: 49%;
+}
+.object {
+    width: 99%;
+}
+
+.message {
+    width: 99%;
+}
+
+.contact .flexcontainer .right .btn {
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1730px) {
+    /* home page normal monitor size */
+    .imgContainer .bigImg .flexContainer .right img {
+        width: 50%;
+    }
+
+    .imgContainer .bigImg .flexContainer .right{
+        text-align: center;
+        width: 700px;
+    }
+
+    .imgContainer .bigImg .flexContainer .left h1 {
+        font-size: 5rem;
+        line-height: 75px;
+    }
+
+    .imgContainer .bigImg .flexContainer .left p {
+        font-size: 1.7rem;
+    }
+    .imgContainer .bigImg .flexContainer .left h2 {
+        font-size: 2.3rem;
+    }
+
+    .btn {
+        font-size: 2rem;
+    }
+    /* about page normal monitor size */
+    .fejlec, .fejlecfeher {
+        font-size: 1.5rem;
+    }
+
+    .fejlec span, .fejlecfeher span {
+        font-size: 2rem;
+        top: 25px;
+    }
+
+    .fejlec .line {
+        width: 280px;
+    }
+
+    .about .flexcontainer .kepdoboz {
+        width: 400px;
+        height: 400px;
+    }
+
+    .about .flexcontainer .text h2 {
+        font-size: 2rem;
+    }
+
+    .about .flexcontainer .text span {
+        font-size: 2rem;
+    }
+
+    .about .flexcontainer .text p {
+        font-size: 1.5rem;
+        margin: 15px 0;
+    }
+
+    .about .flexcontainer {
+        padding: 6rem 60px;
+    }
+
+    .btn2 {
+        font-size: 2rem;
+        padding: 10px 10px;
+    }
+    /* services page normal monitor size */
+    .fejlecfeher .linefeher {
+        width: 350px;
+    }
+
+    .fejlecfeher {
+        top: 5rem;
+    }
+
+    .design, .advertising, .appdesign {
+        width: 370px;
+        height: 250px;
+        font-size: 1rem;
+    }
+
+    .icon {
+        font-size: 5rem;
+    }
+
+    .design h4, .advertising h4, .appdesign h4 {
+        font-size: 1.5rem;
+    }
+    /* skills page normal monitor size */
+    .skills .fejlec .line {
+        width: 330px;
+    }
+}
+/* tablet size */
+@media screen and (max-width: 1320px) {
+    .navBar .hamburger-menu {
+        display: inherit;
+    }
+
+    .navBar .right {
+        display: none;
+    }
+
+    .navBar.active {
+        transition: display 1s;
+    }
+
+    .navBar.active .mininavigation {
+        display: inherit;
+        text-align: center;
+    }
+
+    .navBar.active .mininavigation li {
+        margin-bottom: 10px;
+    }
+
+    .navBar.active .scrollIndicator {
+        top: 321px;
+    }
+
+    /* home page tablet size */
+    .imgContainer .bigImg .flexContainer {
+        flex-wrap: wrap;
+    }
+
+    .imgContainer .bigImg .flexContainer .right {
+        position: relative;
+        bottom: 35px;
+    }
+    /* about page tablet size */
+    .about .flexcontainer .kepdoboz {
+        bottom: 50px;
+    }
+
+    .about .flexcontainer .text {
+        width: 100%;
+        min-width: 290px;
+    }
+    /* skills page tablet size */
+    .flexcontainer {
+        padding: 5rem 60px;
+    }
+    
+    .skills .flexcontainer {
+        justify-content: space-around;
+    }
+    /* contact page tablet size */
+    .contact .flexcontainer {
+        justify-content: space-around;
+    }
+
+    .contact .flexcontainer .left {
+        margin-bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 725px) {
+    /* navbar page mobile size */
+    .navBar .left {
+        font-size: 1rem;
+    }
+
+    .navBar .scrollIndicator {
+        top: 58px;
+    }
+
+    .navBar.active .scrollIndicator {
+        top: 283px;
+    }
+
+    /* home page mobile size */
+    .imgContainer .bigImg .flexContainer .right {
+        display: none;
+    }
+
+    .imgContainer .bigImg .flexContainer .left p {
+        font-size: 1.2rem;
+    }
+
+    .imgContainer .bigImg .flexContainer .left h1 {
+        font-size: 3.5rem;
+        line-height: 50px;
+    }
+
+    .imgContainer .bigImg .flexContainer .left h2 {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+    /* about page mobile size */
+    .fejlec, .fejlecfeher {
+        font-size: 1rem;
+    }
+
+    .fejlec span, .fejlecfeher span {
+        font-size: 1.4rem;
+        top: 18px;
+    }
+
+    .fejlec .line {
+        width: 230px;
+    }
+
+    .fejlecfeher .linefeher {
+        width: 250px;
+    }
+
+    .about .flexcontainer {
+        padding: 6rem 0;
+    }
+
+    .about .flexcontainer .text {
+        width: 80%;
+        justify-content: center;
+    }
+
+    .about .flexcontainer .text p {
+        font-size: 1rem;
+        margin: 15px 0;
+        text-align: justify;
+    }
+
+    .about .flexcontainer .kepdoboz {
+        width: 300px;
+        height: 300px;
+    }
+
+    .btn2 {
+        font-size: 1.5rem;
+        width: 200px;
+    }
+    /* services page mobile size */
+    .services .fejlec, .fejlecfeher {
+        padding-bottom: 30px;
+    }
+    .icon {
+        font-size: 3.5rem;
+    }
+
+    .design, .advertising, .appdesign {
+        width: 300px;
+        height: 300px;
+    }
+    /* skills page mobile size */
+    .skills .fejlec .line {
+        width: 240px;
+    }
+
+    .skills .flexcontainer {
+        justify-content: space-around;
+        padding: 50px 0;
+    }
+
+    .skills .flexcontainer .text, .skills .flexcontainer .csuszka {
+        height: 300px;
+        width: 300px;
+        font-size: 1rem;
+    }
+
+    .skills .flexcontainer .text .btn2 {
+        margin-top: 20px;
+        font-size: 1rem;
+        width: 150px;
+    }
+    /* contact page mobile size */
+    .contact .flexcontainer .left, .contact .flexcontainer .right {
+        width: 300px;
+        min-width: unset;
+        font-size: 1rem;
+    }
+
+    .contact .flexcontainer {
+        justify-content: space-around;
+        padding: 100px 0;
+    }
+
+    .contact .flexcontainer .right .btn {
+        font-size: 1rem;
+    }
+}
