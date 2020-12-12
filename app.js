@@ -30,13 +30,6 @@ const typed = new Typed(".typing", {
     loop: true
 });
 
-const typed2 = new Typed(".typing2", {
-    strings: ["YouTuber", "Blogger", "Developer", "Designer", "Freelancer"],
-    typeSpeed: 100,
-    backSpeed: 60,
-    loop: true
-});
-
 // scrollIndicator
 const scrollIndicator = document.querySelector(".scrollIndicator");
 

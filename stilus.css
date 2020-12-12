@@ -244,8 +244,8 @@ a:hover {
 }
 
 .scrollIndicator {
-    position: fixed;
-    top: 96px;
+    position: absolute;
+    bottom: -2px;
     left: 0;
     height: 2px;
     background: #19d3da;
@@ -649,9 +649,9 @@ a:hover {
         margin-bottom: 10px;
     }
 
-    .navBar.active .scrollIndicator {
+    /* .navBar.active .scrollIndicator {
         top: 321px;
-    }
+    } */
 
     /* home page tablet size */
     .imgContainer .bigImg .flexContainer {
@@ -695,13 +695,13 @@ a:hover {
         font-size: 1rem;
     }
 
-    .navBar .scrollIndicator {
+    /* .navBar .scrollIndicator {
         top: 58px;
     }
 
     .navBar.active .scrollIndicator {
         top: 288px;
-    }
+    } */
 
     /* home page mobile size */
     .imgContainer .bigImg .flexContainer .right {
